@@ -1,0 +1,135 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portofolio</title>
+  <link rel="stylesheet" href="css/gallery.css">
+  <style>
+    /* General styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #171719;
+      color: white;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 40px;
+      opacity: 0; /* Mulai dengan transparansi */
+      animation: fadeIn 2s forwards, slideUp 1s ease-out forwards;
+    }
+
+    .hero-text {
+      max-width: 50%;
+      animation: fadeInText 2s ease-out forwards;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      color: #433f56;
+      margin-bottom: 20px;
+      animation: fadeInText 2s ease-out forwards;
+    }
+
+    .hero-text div {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 30px;
+      animation: fadeInText 2s ease-out forwards;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: #433f56;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      animation: fadeInText 2s ease-out forwards;
+    }
+
+    .cta-button:hover {
+      background-color: #ffffff;
+      color: #433f56;
+    }
+
+    .hero-image {
+      animation: slideInImage 1.5s ease-out forwards;
+    }
+
+    .hero-image img {
+      width: 300px;
+      height: auto;
+    }
+
+    /* Animasi Pesawat Terbang */
+    .airplane {
+      position: absolute;
+      bottom: 20px;
+      left: -150px; /* Mulai dari luar layar di kiri */
+      animation: flyAirplane 6s linear infinite; /* Gerakan pesawat */
+    }
+
+    .airplane img {
+      width: 100px; /* Ukuran pesawat */
+      height: auto;
+    }
+
+    /* Keyframes untuk animasi */
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes fadeInText {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      0% { opacity: 0; transform: translateY(50px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideInImage {
+      0% { opacity: 0; transform: translateX(50px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes flyAirplane {
+      0% { left: -150px; transform: translateY(0); }
+      50% { left: 50%; transform: translateY(-30px); }
+      100% { left: 100%; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>My Portofolio.</h1>
+      <div>Welcome to my portofolio, my friend.</div>
+      <a href="about.html" class="cta-button">Let's go!</a>
+    </div>
+    <div class="hero-image">
+      <img src="logo.jpg" alt="Rvls logo">
+    </div>
+  </section>
+
+  <!-- Animasi Pesawat -->
+  <div class="airplane">
+    <img src="fly.png" alt="Flying airplane">
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=.0">
+  <title>Kritik & Saran</title>
+  <link rel="stylesheet" href="css/gallery.css">
+</head>
+<body>
+  <!-- Navigasi -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Bagikan Pendapat Anda</h1>
+      <p>Kami ingin terus berkembang, dan masukan Anda sangat berarti bagi kami.</p>
+    </div>
+    <div class="hero-image">
+      <img src="feedback.jpg" alt="Feedback" style="width: 300px; height: auto;">
+    </div>
+  </section>
+
+  <!-- Form Kritik & Saran -->
+  <section class="container">
+    <h2>Formulir Kritik & Saran</h2>
+    <form action="/submit-feedback" method="post">
+      <label for="name">Nama</label>
+      <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required>
+
+      <label for="message">Pesan</label>
+      <textarea id="message" name="message" placeholder="Tulis kritik atau saran Anda" required></textarea>
+
+      <button type="submit" class="cta-button">Kirim</button>
+    </form>
+  </section>
+
+  <!-- Informasi Kontak -->
+  <section class="container">
+    <h2>Kontak Kami</h2>
+    <p>Wanna talk to me :</p>
+    <ul>
+      <li><a href="https://www.instagram.com/revieel" target="_blank">Instagram</a></li>
+      <li><a href="https://www.facebook.com/profile.php?id=100003867139797&mibextid=ZbWKwL" target="_blank">Facebook</a></li>
+      <li>Email: <a href="mailto:exviero@gmail.com">exviero@gmail.com</a></li>
+    </ul>
+  </section>
+ 
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Portfolio.</p>
+  </footer>
+</body>
+</html>

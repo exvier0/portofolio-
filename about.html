@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Saya</title>
+    <link rel="stylesheet" href="css/gallery.css">
+    <style>
+        /* Body and general styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #171719;
+            color: white;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #222224;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #433f56;
+        }
+
+        /* Container styles */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #222224;
+            border-radius: 8px;
+        }
+
+        /* Myself Section */
+        section h2 {
+            color: #433f56;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .container img {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            animation: fadeIn 2s ease-out forwards;
+        }
+
+        /* Experience Section */
+        .experience ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .experience li {
+            background-color: #f4f4f9;
+            margin: 10px 0;
+            padding: 15px;
+            border-left: 4px solid #433f56;
+        }
+
+        /* Skills Section */
+        .skills .skill {
+            margin-bottom: 20px;
+        }
+
+        .skills .progress-bar {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 20px;
+            margin-top: 5px;
+        }
+
+        .skills .progress {
+            height: 100%;
+            background-color: #433f56;
+            text-align: center;
+            line-height: 20px;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* Slider Section */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slider img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .prev, .next {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 2rem;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 50%;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Portofolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Informasi Diri Section -->
+    <div class="container">
+        <section>
+            <h2>Myself</h2>
+            <img src="hhh.png" alt="Foto Profil">
+            <p>Saya masih mencari jati diri, pak.</p>
+        </section>
+        <section class="slider-container">
+            <div class="slider-nav">
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+        </section>
+
+        <!-- Pengalaman Section -->
+        <section class="experience">
+            <h2>Pengalaman</h2>
+            <ul>
+                <li><strong>Website Toko Ramen</strong> - Membuat website untuk penjuala Ramen Ichiraku yang ada di anime Naruto.</li>
+                <li><strong>Website Rekomendasi Outfit</strong> - Membuat Website tentang rekomendasi outfit.</li>
+            </ul>
+        </section>
+
+        <!-- Keterampilan Section -->
+        <section class="skills">
+            <h2>Keterampilan</h2>
+            <div class="skill">
+                <p>HTML, CSS, dan JavaScript</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <p>Python dan HTML</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <p>Database MySQL</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 70%;"></div>
+                </div>
+            </div>
+            <div class="skill">
+                <p>Desain UI/UX dengan Figma</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 75%;"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Portofolio.</p>
+    </footer>
+
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.slider img');
+        const totalImages = images.length;
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+
+        function updateSlider() {
+            const slider = document.querySelector('.slider');
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex === 0) ? totalImages - 1 : currentIndex - 1;
+            updateSlider();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex === totalImages - 1) ? 0 : currentIndex + 1;
+            updateSlider();
+        });
+    </script>
+</body>
+
+</html>
